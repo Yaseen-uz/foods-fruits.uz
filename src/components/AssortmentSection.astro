@@ -1,23 +1,29 @@
 ---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import Image from "astro/components/Image.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+
 const categories = [
   {
     id: "c1",
-    name: "Фрукты",
-    description: "Содержат большое количество воды, что делает их освежающими и увлажняющими для организма.",
-    image: "./1.webp",
+    name: t("Фрукты"),
+    description: t("Содержат большое количество воды, что делает их освежающими и увлажняющими для организма."),
+    image: "/fr.webp",
   },
   {
     id: "c2",
-    name: "Ягоды",
-    description: "Сладкие и терпкие ягоды, богатые антиоксидантами и вкусом.",
-    image: "./2.webp",
+    name: t("Ягоды"),
+    description: t("Сладкие и терпкие ягоды, богатые антиоксидантами и вкусом."),
+    image: "/yg.webp",
   },
   {
     id: "c3",
-    name: "Овощи",
-    description: "Являются важной частью здорового питания, так как они содержат множество витаминов, минералов и других полезных веществ.",
-    image: "./3.webp",
+    name: t("Овощи"),
+    description: t("Являются важной частью здорового питания, так как они содержат множество витаминов, минералов и других полезных веществ."),
+    image: "/ov.webp",
   },
 
 ];
@@ -33,9 +39,9 @@ const categories = [
   
   <div class="container mx-auto px-4 md:py-16 relative z-10">
     <div class="text-center font-serif italic">
-      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 tracking-tight text-white">Широкий ассортимент</h2>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 tracking-tight text-white">{t("Широкий ассортимент")}</h2>
       <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-12">
-        Мы предлагаем разнообразные фрукты и овощи высочайшего качества со всего мира
+        {t("Мы предлагаем разнообразные фрукты и овощи высочайшего качества со всего мира")}
       </p>
     </div>
     
@@ -67,9 +73,9 @@ const categories = [
     
     <div class="mt-16 text-center">
       <div class="bg-white/5 backdrop-blur-lg border border-white/10 max-w-4xl mx-auto p-8 rounded-xl shadow-xl transition-all duration-300 hover:bg-white/10">
-        <h3 class="text-2xl font-medium mb-4 text-white">Соблюдение стандартов</h3>
+        <h3 class="text-2xl font-medium mb-4 text-white">{t("Соблюдение стандартов")}</h3>
         <p class="text-gray-300 text-sm">
-          Компания уделяет особое внимание качеству продукции, сотрудничая с надёжными поставщиками и строго контролируя процессы хранения и транспортировки, следует строгим стандартам безопасности пищевых продуктов и уделяет внимание санитарным нормам, которые помогают сохранять в целостности и сохранности ваши овощи и фрукты.
+          {t("Компания уделяет особое внимание качеству продукции, сотрудничая с надёжными поставщиками и строго контролируя процессы хранения и транспортировки, следует строгим стандартам безопасности пищевых продуктов и уделяет внимание санитарным нормам, которые помогают сохранять в целостности и сохранности ваши овощи и фрукты.")}
         </p>
       </div>
     </div>

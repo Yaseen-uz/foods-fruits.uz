@@ -1,0 +1,30 @@
+---
+import HeroSection from "../../components/HeroSection.astro";
+import AboutSection from "../../components/AboutSection.astro";
+import AssortmentSection from "../../components/AssortmentSection.astro";
+import ContactSection from "../../components/ContactSection.astro";
+import FooterSection from "../../components/FooterSection.astro";
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/global.css";
+
+export async function getStaticPaths() {
+    return [
+        { params: { locale: "en" } },
+        { params: { locale: "ru" } },
+        { params: { locale: "uz" } },
+        //
+    ];
+}
+---
+
+<Layout>
+    <HeroSection />
+
+    <AboutSection />
+
+    <AssortmentSection />
+
+    <ContactSection />
+
+    <FooterSection />
+</Layout>

@@ -1,11 +1,14 @@
 ---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import { Building } from "lucide-react";
 
-// ContactSection.astro
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const companyInfo = {
     contact: {
         address: "100115 Respublic of Uzbekistan, Tashkent city, Chilanzar district, KICHIK XALQA YO’LI 2A-UY",
-        phone: "998, 909, 729, 9470",
+        phone: "+998954397101",
         email: "foodsfruits@yandex.com",
     },
 };
@@ -14,20 +17,20 @@ const companyInfo = {
 <section id="contact" class="md:py-24 !py-5">
     <div class="max-w-6xl mx-auto px-4">
         <div class="text-center md:mb-16">
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 tracking-tight">Свяжитесь с нами</h2>
-            <p class="my-0 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">Есть вопросы о наших продуктах? Свяжитесь с нами.</p>
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 tracking-tight">{t("Свяжитесь с нами")}</h2>
+            <p class="my-0 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">{t("Есть вопросы о наших продуктах? Свяжитесь с нами.")}</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
             <!-- Contact Information -->
             <div class="bg-white/80 backdrop-blur-md border border-white/20 shadow-lg p-8 rounded-2xl">
-                <h3 class="text-2xl font-medium mb-6">Контактная информация</h3>
+                <h3 class="text-2xl font-medium mb-6">{t("Контактная информация")}</h3>
 
                 <div class="space-y-6 mb-8">
                     <div class="flex items-center space-x-4">
                         <Building className="w-6 h-6 text-yellow-500 mt-1 flex-shrink-0" />
                         <div>
-                            <p class="font-medium">Компания</p>
+                            <p class="font-medium">{t("Компания")}</p>
                             <p class="!my-0 font-medium">OOO FOODSFRUITS</p>
                         </div>
                     </div>
@@ -43,10 +46,13 @@ const companyInfo = {
                             stroke="currentColor"
                             stroke-width="2"
                             stroke-linecap="round"
-                            stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg
+                            stroke-linejoin="round"
                         >
+                            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
                         <div>
-                            <p class="font-medium">Адрес</p>
+                            <p class="font-medium">{t("Адрес")}</p>
                             <p class="text-muted-foreground">{companyInfo.contact.address}</p>
                         </div>
                     </div>
@@ -63,12 +69,13 @@ const companyInfo = {
                             stroke-width="2"
                             stroke-linecap="round"
                             stroke-linejoin="round"
-                            ><path
-                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
-                            ></path></svg
                         >
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                            ></path>
+                        </svg>
                         <div>
-                            <p class="font-medium">Телефон</p>
+                            <p class="font-medium">{t("Телефон")}</p>
                             <p class="text-muted-foreground">{companyInfo.contact.phone}</p>
                         </div>
                     </div>
@@ -85,29 +92,31 @@ const companyInfo = {
                             stroke-width="2"
                             stroke-linecap="round"
                             stroke-linejoin="round"
-                            ><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg
                         >
+                            <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                        </svg>
                         <div>
-                            <p class="font-medium">Email</p>
+                            <p class="font-medium">{t("Email")}</p>
                             <p class="text-muted-foreground">{companyInfo.contact.email}</p>
                         </div>
                     </div>
                 </div>
 
                 <div>
-                    <h4 class="text-lg font-medium mb-4">Часы работы</h4>
+                    <h4 class="text-lg font-medium mb-4">{t("Часы работы")}</h4>
                     <div class="space-y-2 text-sm">
                         <div class="flex justify-between">
-                            <span>Понедельник - Пятница:</span>
+                            <span>{t("Понедельник - Пятница:")}</span>
                             <span>9:00 - 18:00</span>
                         </div>
                         <div class="flex justify-between">
-                            <span>Суббота:</span>
+                            <span>{t("Суббота:")}</span>
                             <span>10:00 - 16:00</span>
                         </div>
                         <div class="flex justify-between">
-                            <span>Воскресенье:</span>
-                            <span>Выходной</span>
+                            <span>{t("Воскресенье:")}</span>
+                            <span>{t("Выходной")}</span>
                         </div>
                     </div>
                 </div>
