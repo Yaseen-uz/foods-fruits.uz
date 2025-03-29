@@ -27,7 +27,7 @@ const { locale } = Astro.params;
                         title="BakerStreet"
                         class="flex rounded-md focus:outline-none focus:ring-2 focus:ring-offset-4 focus:ring-offset-secondary focus:ring-primary"
                     >
-                        <span class="font-serif font-normal text-xl md:text-2xl text-white">Food-Fruits.uz</span>
+                        <span class="font-serif font-normal text-lg md:text-2xl text-white">Food-Fruits.uz</span>
                     </a>
                 </div>
 
@@ -47,11 +47,11 @@ const { locale } = Astro.params;
                     }
                 </div>
 
-                <div class="flex items-center gap-3">
+                <div class="flex flex-col md:flex-row items-center gap-3">
                     <LanguageSwitcher client:only />
 
                     <a href="tel:+998954397101" class="my-0 text-white text-sm md:text-lg flex items-center gap-3 hover:text-white/50 duration-200">
-                        <Phone className="h-4 w-4 md:h-5 md:w-5" />
+                        <Phone className="md:block h-4 w-4 md:h-5 md:w-5" />
                         <p class="my-0 font-medium italic">+998 95 439-71-01</p>
                     </a>
                 </div>
