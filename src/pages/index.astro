@@ -1,3 +1,11 @@
 ---
+export async function getStaticPaths() {
+    return [];
+}
 
+export async function get() {
+    return {
+        redirect: "/ru",
+    };
+}
 ---
