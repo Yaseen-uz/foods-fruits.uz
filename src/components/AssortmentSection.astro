@@ -1,24 +1,23 @@
 ---
-// AssortmentSection.astro
-// Import your data or define it here
+import Image from "astro/components/Image.astro";
 const categories = [
   {
     id: "c1",
     name: "Фрукты",
     description: "Содержат большое количество воды, что делает их освежающими и увлажняющими для организма.",
-    image: "./assortment/1.jpeg",
+    image: "./assortment/1.webp",
   },
   {
     id: "c2",
     name: "Ягоды",
     description: "Сладкие и терпкие ягоды, богатые антиоксидантами и вкусом.",
-    image: "./assortment/2.jpg",
+    image: "./assortment/2.webp",
   },
   {
     id: "c3",
     name: "Овощи",
     description: "Являются важной частью здорового питания, так как они содержат множество витаминов, минералов и других полезных веществ.",
-    image: "./assortment/3.jpeg",
+    image: "./assortment/3.webp",
   },
 
 ];
@@ -48,7 +47,9 @@ const categories = [
           data-animate="true"
         >
           <div class="aspect-square overflow-hidden">
-            <img 
+            <Image
+            width={500}
+            height={500}
               src={category.image} 
               alt={category.name}
               class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
