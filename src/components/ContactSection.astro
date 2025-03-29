@@ -53,7 +53,11 @@ const companyInfo = {
                         </svg>
                         <div>
                             <p class="font-medium">{t("Адрес")}</p>
-                            <p class="text-muted-foreground">{companyInfo.contact.address}</p>
+                            <a
+                                href="https://yandex.uz/maps/10335/tashkent/?from=mapframe&ll=69.286131%2C41.324718&mode=usermaps&source=mapframe&um=constructor%3A5ae1e7ef2e099beab857784842b3021a93263f958b6ca09ae9c5255137235493&utm_source=mapframe&z=14"
+                                target="_blank"
+                                class="text-muted-foreground">{companyInfo.contact.address}</a
+                            >
                         </div>
                     </div>
 
@@ -76,7 +80,7 @@ const companyInfo = {
                         </svg>
                         <div>
                             <p class="font-medium">{t("Телефон")}</p>
-                            <p class="text-muted-foreground">{companyInfo.contact.phone}</p>
+                            <a href="tel:+998954397101" class="text-muted-foreground">{companyInfo.contact.phone}</a>
                         </div>
                     </div>
 
@@ -98,7 +102,7 @@ const companyInfo = {
                         </svg>
                         <div>
                             <p class="font-medium">{t("Email")}</p>
-                            <p class="text-muted-foreground">{companyInfo.contact.email}</p>
+                            <a href="mailto:foodsfruits@yandex.com" class="text-muted-foreground">{companyInfo.contact.email}</a>
                         </div>
                     </div>
                 </div>
